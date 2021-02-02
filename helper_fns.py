@@ -36,7 +36,7 @@ def log_metrics(filename, y_target, y_pred, loss, saved=False, writer=None, epoc
         line = ",".join([str(loss), str(accuracy), str(tn), str(fp), str(fn), str(tp), str(precision_0), str(precision_1), str(recall_0), str(recall_1), str(f1_0), str(f1_1), str(count_0), str(count_1), str(auroc), str(saved)+'\n'])
         result.write(line)
         
-        if board_writer is not None:
+        if writer is not None:
             paths = filename.strip('.csv').split('/')
             phase = paths[-1]
             writer.add_scalar(path+'/tn', tn, epoch)
