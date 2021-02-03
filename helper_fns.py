@@ -39,11 +39,11 @@ def log_metrics(filename, y_target, y_pred, loss, saved=False, writer=None, epoc
         if writer is not None:
             paths = filename.strip('.csv').split('/')
             phase = paths[-1]
-            writer.add_scalar(path+'/tn', tn, epoch)
-            writer.add_scalar(path+'/tp', tp, epoch)
-            writer.add_scalar(path+'/fn', fn, epoch)
-            writer.add_scalar(path+'/fp', fp, epoch)
-            writer.add_scalar(path+'/auroc', auroc, epoch)
+            writer.add_scalar(phase+'/tn', tn, epoch)
+            writer.add_scalar(phase+'/tp', tp, epoch)
+            writer.add_scalar(phase+'/fn', fn, epoch)
+            writer.add_scalar(phase+'/fp', fp, epoch)
+            writer.add_scalar(phase+'/auroc', auroc, epoch)
             writer.flush()
             writer.close()
 
