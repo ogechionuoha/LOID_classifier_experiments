@@ -60,7 +60,7 @@ class ResNet50_GradCam(nn.Module):
     
 class ResNet50_CBAM(ResNet50_GradCam):
     def __init__(self,num_classes = 2, finetune=False, visualise=False, pretrained=True, attn_type=None):
-        super(ResNet50_CBAM, self).__init__(num_classes = 2, finetune=False, visualise=False, pretrained=True)
+        super(ResNet50_CBAM, self).__init__(num_classes = 2, finetune=finetune, visualise=visualise, pretrained=pretrained)
 
         pretained_cbam_path = './attention_module/RESNET50_CBAM.pth'
         
